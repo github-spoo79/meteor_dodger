@@ -1,6 +1,7 @@
 import pygame
 import sys
 import time
+import os
 from enviroment import Enviroment as env
 from player import Player, CrossHair
 from spawn import Spawn
@@ -25,9 +26,6 @@ class Main():
         pygame.display.set_caption(env.GAME_TITLE)
         icon = pygame.image.load(env.GAME_DIR + "/meteor_dodger.ico")
         pygame.display.set_icon(icon)
-        pygame.mouse.set_visible(False)
-        pygame.event.set_grab(self.grab) #마우스를 스크린 안에 고정 처리
-
 
         self.meteor_sprites = pygame.sprite.Group() # 운석 sprites group 생성
         self.effect_sprites = pygame.sprite.Group() # effect sprites group 생성
@@ -81,9 +79,13 @@ class Main():
         
     def state(self):
         if self.GAME_STATE == env.TITLE:
+            pygame.mouse.set_visible(True)
+            pygame.event.set_grab(False) #마우스를 스크린 안에 고정 처리
             self.title.running = True
             self.title.play()
         elif self.GAME_STATE == env.PLAYING:
+            pygame.mouse.set_visible(False)
+            pygame.event.set_grab(True) #마우스를 스크린 안에 고정 처리
             self.running = True
             self.init()
             self.play()

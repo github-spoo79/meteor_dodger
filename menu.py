@@ -217,7 +217,7 @@ class Upgrade():
                 text_color = env.WHITE                            
 
             if i == len(upgrade_text) - 1:                
-                Util.print_text(self.main, "Return To Main", 400, 700, "MIDDLE2", text_color, env.CENTER, True)                            
+                Util.print_text(self.main, "Return To Main", 400, 700, "MIDDLE2", text_color, env.CENTER, True)
             else:
                 Util.print_text(self.main, upgrade_text[i], 100, 350 + (margin * i), "MIDDLE2", text_color, env.LEFT, True)                
                 for j in range(10):
