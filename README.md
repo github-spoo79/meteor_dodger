@@ -35,7 +35,7 @@
 ## 🚀 설치 및 실행
 1. 이 리포지토리를 클론합니다:
    ```bash
-   git clone https://github.com/your-username/your-game-repo.git
+   git clone https://github.com/github-spoo79/meteor_dodger.git
 
 2. 게임실행
    ```bash
